@@ -1,12 +1,12 @@
 import {Asignatura} from './asignatura';
 
 export class Alumno{
-    nombre:String;
-    edad:Number;
-    curso:Number;
+    nombre:string;
+    edad:number;
+    curso:number;
     asignaturas:Asignatura[];
 
-    constructor(nombre:String, edad:Number, curso:Number){
+    constructor(nombre:string, edad:number, curso:number){
         this.nombre = nombre;
         this.edad = edad;
         this.curso = curso;
