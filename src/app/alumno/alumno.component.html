@@ -1,6 +1,6 @@
 <ul>
     <li *ngFor="let alumno of alumnos">
-        {{alumno.nombre}}
+        <a routerLink="/detail/{{alumno.nombre}}">{{alumno.nombre}}</a>
     </li>
 </ul>
 <input id="nombre" [(ngModel)]="nombre" size="10"> 

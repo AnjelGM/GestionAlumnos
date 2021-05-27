@@ -4,11 +4,13 @@ import {RouterModule, Routes} from '@angular/router';
 
 import{AlumnoComponent} from './alumno/alumno.component';
 import{LoginComponent} from './login/login.component';
+import { DetallesAlumnoComponent } from './detalles-alumno/detalles-alumno.component';
 
 const routes:Routes=[
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'alumno', component:AlumnoComponent},
-  {path:'login', component:LoginComponent}
+  {path:'login', component:LoginComponent},
+  {path:'detail/:nombre', component:DetallesAlumnoComponent}
 ];
 
 @NgModule({

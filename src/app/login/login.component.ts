@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   }
 
   login():void{
-    debugger;
     let condicion1:boolean, condicion2:boolean;
     for(let count = 0;count < profesores.length;count++){
       condicion1 = profesores[count].nombre == this.nombre;
@@ -27,11 +26,10 @@ export class LoginComponent implements OnInit {
       if(condicion1 && condicion2){
         let profesor:Profesor = profesores[count];
         sessionStorage.setItem("profesor", JSON.stringify(profesor));
-        alert("bienvenido " + profesor.nombre);
         this.router.navigateByUrl("/alumno");
         break;
       }else if(count === profesores.length -1){
-        alert("asdf");
+        alert("Datos introducidos incorrectos");
       }
     }
   }

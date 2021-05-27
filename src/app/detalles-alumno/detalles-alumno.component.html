@@ -1,1 +1,21 @@
-<p>detalles-alumno works!</p>
+<div *ngIf="alumno">
+    <p>Nombre: {{alumno.nombre}} <br>
+        Edad: {{alumno.edad}} <br>
+        Curso: {{alumno.curso}} <br>
+    </p>
+    <select name="Asignaturas" [(ngModel)]="index">
+        <option value="{{i}}" *ngFor = "let asignatura of alumno.asignaturas; let i = index">
+        {{asignatura.nombre}}</option>
+    </select>
+
+    <h3>Asignatura:</h3> {{alumno.asignaturas[index].nombre}}       
+    <h3>Nota primer trimestre: </h3> 
+    <input type="number" min="0" max="10" [(ngModel)]="alumno.asignaturas[index].notaPrimerTrimestre" size="1" style="width: 3em;"><br>
+    <h3>Nota segundo trimestre: </h3> 
+    <input type="number" min="0" max="10" [(ngModel)]="alumno.asignaturas[index].notaSegundoTrimestre" size="1" style="width: 3em;"><br>
+    <h3>Nota tercer trimestre: </h3> 
+    <input type="number" min="0" max="10" [(ngModel)]="alumno.asignaturas[index].notaTercerTrimestre" size="1" style="width: 3em;"><br>
+    <h3>Media total: {{alumno.asignaturas[index].media()}}</h3>
+    
+
+</div>
