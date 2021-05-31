@@ -31,7 +31,7 @@ export class DetallesAlumnoComponent implements OnInit {
       let profesor:Profesor;
       profesor = JSON.parse(sessionStorage.getItem("profesor")||"");
       if(profesor.curso !== this.alumno?.curso){
-        this.location.back();
+        this.router.navigateByUrl("/alumno");
       }
     }
   }
