@@ -1,9 +1,18 @@
-<ul>
-    <li *ngFor="let alumno of alumnos">
-        <a routerLink="/detail/{{alumno.nombre}}">{{alumno.nombre}}</a>
-    </li>
-</ul>
-<input id="nombre" [(ngModel)]="nombre" size="10"> 
-<input type="number" [(ngModel)]="edad" size="1" style="width: 3em;">
-<button (click)="crearAlumno()">Crear alumno</button> <br><br>
-<button (click)="cerrarSesion()">Cerrar sesion</button>
+<div class="text-center">
+    <h1 class="h3 mb-3 font-weight-normal">Listado de alumnos</h1>
+    <div class="row justify-content-center aling-items-center">
+        <ul class="list-bullets">
+            <li *ngFor="let alumno of alumnos" class="mb-2">
+                <a routerLink="/detail/{{alumno.nombre}}">{{alumno.nombre}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row justify-content-center">
+            <input id="nombre" [(ngModel)]="nombre" class="form-control" id="nombre" placeholder="nombre"> 
+            <input type="number" [(ngModel)]="edad" class="form-control" id="edad" placeholder="edad">
+    </div>
+    <br>
+    <button (click)="crearAlumno()" class="btn btn-outline-primary">Crear alumno</button> <br><br>
+    <button class="btn btn-outline-danger"(click)="cerrarSesion()">Cerrar sesion</button>
+</div>

@@ -1,21 +1,24 @@
-<div *ngIf="alumno">
-    <p>Nombre: {{alumno.nombre}} <br>
-        Edad: {{alumno.edad}} <br>
-        Curso: {{alumno.curso}} <br>
-    </p>
-    <select name="Asignaturas" [(ngModel)]="index">
-        <option value="{{i}}" *ngFor = "let asignatura of alumno.asignaturas; let i = index">
-        {{asignatura.nombre}}</option>
-    </select>
-
-    <h3>Asignatura:</h3> {{alumno.asignaturas[index].nombre}}       
-    <h3>Nota primer trimestre: </h3> 
-    <input type="number" min="0" max="10" [(ngModel)]="alumno.asignaturas[index].notaPrimerTrimestre" size="1" style="width: 3em;"><br>
-    <h3>Nota segundo trimestre: </h3> 
-    <input type="number" min="0" max="10" [(ngModel)]="alumno.asignaturas[index].notaSegundoTrimestre" size="1" style="width: 3em;"><br>
-    <h3>Nota tercer trimestre: </h3> 
-    <input type="number" min="0" max="10" [(ngModel)]="alumno.asignaturas[index].notaTercerTrimestre" size="1" style="width: 3em;"><br>
-    <h3>Media total: {{alumno.asignaturas[index].media()}}</h3>
-    
-
+<div class="container">
+    <div class="row">
+        <div *ngIf="alumno">
+            <p class="h2 mb-3 font-weight-bold">Detalles del Alumno</p>
+            <p><span class="h5 mb-3 font-weight-normal">Nombre:</span><span class="h6 mb-3 font-weight-normal">{{alumno.nombre}}</span> <br>
+               <span class="h5 mb-3 font-weight-normal">Edad: </span><span class="h6 mb-3 font-weight-normal">{{alumno.edad}}</span> <br>
+               <span class="h5 mb-3 font-weight-normal">Curso:</span><span class="h6 mb-3 font-weight-normal">{{alumno.curso}}</span> <br>
+            </p>
+            <select class="form-select limitar1" name="Asignaturas" [(ngModel)]="index">
+                <option value="{{i}}" *ngFor = "let asignatura of alumno.asignaturas; let i = index">
+                {{asignatura.nombre}}</option>
+            </select><br>
+            <p> <span class="h3 mb-3 font-weight-bold">Asignatura: </span> <span class="h4 mb-3 font-weight-normal">{{alumno.asignaturas[index].nombre}}</span></p>        
+            <p class="h5 mb-3 font-weight-normal">Nota primer trimestre:  
+            <input type="number" min="0" max="10" [(ngModel)]="alumno.asignaturas[index].notaPrimerTrimestre" size="1" style="width: 3em;"></p>
+            <p class="h5 mb-3 font-weight-normal">Nota segundo trimestre: 
+            <input type="number" min="0" max="10" [(ngModel)]="alumno.asignaturas[index].notaSegundoTrimestre" size="1" style="width: 3em;"></p>
+            <p class="h5 mb-3 font-weight-normal">Nota tercer trimestre:  
+            <input type="number" min="0" max="10" [(ngModel)]="alumno.asignaturas[index].notaTercerTrimestre" size="1" style="width: 3em;"></p>
+            <p><span class="h3 mb-3 font-weight-bold">Media total: </span><span class="h4 mb-3 font-weight-normal">{{alumno.asignaturas[index].media()}}</span></p>
+            <button class="btn btn-outline-primary" (click)="goBack()">volver</button>
+        </div>
+    </div>
 </div>
